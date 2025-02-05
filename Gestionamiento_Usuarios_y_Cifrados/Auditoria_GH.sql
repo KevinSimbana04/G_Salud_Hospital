@@ -78,11 +78,7 @@ END $$
 
 DELIMITER ;
 
-select * from pacientes;
-
-
-update pacientes 
-set alergias = 'arena'
-where id=1;
 
 select * from auditoria;
+
+
