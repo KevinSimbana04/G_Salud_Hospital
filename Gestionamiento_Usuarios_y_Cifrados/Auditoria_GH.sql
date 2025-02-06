@@ -60,7 +60,6 @@ DELIMITER ;
 
 
 DELIMITER $$
-
 -- Trigger para DELETE en `pacientes`
 CREATE TRIGGER auditoria_delete_pacientes
 AFTER DELETE ON pacientes
@@ -75,10 +74,73 @@ BEGIN
     INSERT INTO auditoria (usuario, operacion, tabla_afectada, registro_id, cambios)
     VALUES (SUBSTRING_INDEX(CURRENT_USER(), '@', 1), 'DELETE', 'pacientes', OLD.id, cambios);
 END $$
-
 DELIMITER ;
 
 
-select * from auditoria;
+ DELIMITER $$
+-- Trigger para UPDATE en `medicos`
+CREATE TRIGGER auditoria_update_medicos
+AFTER UPDATE ON medicos
+FOR EACH ROW
+BEGIN
+    DECLARE cambios TEXT;
+    SET cambios = CONCAT(
+        ', tipo_de_contrato de ', OLD.tipo_contrato, ' a ', NEW.tipo_contrato,
+        ', horario_entrada', OLD.horario_entrada, ' a ', NEW.horario_entrada,
+        ', horario_salida', OLD.hora_salida, ' a ', NEW.hora_salida
+    );
+    INSERT INTO auditoria (usuario, operacion, tabla_afectada, registro_id, cambios)
+    VALUES (SUBSTRING_INDEX(CURRENT_USER(), '@', 1), 'UPDATE', 'medicos', OLD.id, cambios);
+END $$
+DELIMITER ;
+
+ DELIMITER $$
+-- Trigger para UPDATE en `medicos`
+CREATE TRIGGER auditoria_update_citas
+AFTER UPDATE ON citas
+FOR EACH ROW
+BEGIN
+    DECLARE cambios TEXT;
+    SET cambios = CONCAT(
+        ', cambio  de fecha ', OLD.fecha, ' a ', NEW.fecha,
+        ', hora de inicio ', OLD.hora_inicio, ' a ', NEW.hora_inicio,
+        ', hora de salida ', OLD.hora_finalizacion, ' a ', NEW.hora_finalizacion,
+        ', estado ', OLD.estado, ' a ', NEW.estado
+    );
+    INSERT INTO auditoria (usuario, operacion, tabla_afectada, registro_id, cambios)
+    VALUES (SUBSTRING_INDEX(CURRENT_USER(), '@', 1), 'UPDATE', 'citas', OLD.id, cambios);
+END $$
+DELIMITER ;
+
+
+ DELIMITER $$
+-- Trigger para UPDATE en `oredenes_examenes`
+CREATE TRIGGER auditoria_update_ordenesexamenes
+AFTER UPDATE ON ordenesexamenes
+FOR EACH ROW
+BEGIN
+    DECLARE cambios TEXT;
+    SET cambios = CONCAT(
+        'cambio de  estado', OLD.estado, ' a ', NEW.estado
+    );
+    INSERT INTO auditoria (usuario, operacion, tabla_afectada, registro_id, cambios)
+    VALUES (SUBSTRING_INDEX(CURRENT_USER(), '@', 1), 'UPDATE', 'oredenes_examenes', OLD.id, cambios);
+END $$
+DELIMITER ;
+
+ DELIMITER $$
+-- Trigger para UPDATE en `oredenes_examenes`
+CREATE TRIGGER auditoria_update_medicamentos
+AFTER UPDATE ON medicamentos
+FOR EACH ROW
+BEGIN
+    DECLARE cambios TEXT;
+    SET cambios = CONCAT(
+        'stock ', OLD.stock, ' a ', NEW.stock
+    );
+    INSERT INTO auditoria (usuario, operacion, tabla_afectada, registro_id, cambios)
+    VALUES (SUBSTRING_INDEX(CURRENT_USER(), '@', 1), 'UPDATE', 'medicamentos', OLD.id, cambios);
+END $$
+DELIMITER ;
 
 
