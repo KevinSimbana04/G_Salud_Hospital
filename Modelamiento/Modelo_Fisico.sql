@@ -27,7 +27,7 @@ CREATE TABLE datospersonales (
     edad INT NOT NULL CHECK (edad >= 0),
     sexo ENUM('M','F','O') NOT NULL,
     estado_civil VARCHAR(100),
-    telefono VARCHAR(20) NOT NULL CHECK (telefono REGEXP '^\+593[0-9]{9}$'),
+    telefono VARCHAR(20) NOT NULL CHECK (telefono REGEXP '^\[0-9]{10}$'),
     direccion_id INT NOT NULL,
     pais_origen_id INT NOT NULL, 
     correo_electronico VARCHAR(100) UNIQUE NOT NULL CHECK (correo_electronico REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'),
@@ -69,7 +69,7 @@ CREATE TABLE pacientes (
     enfermedades_preexistentes TEXT,
     medicamentos_actuales TEXT,
     contacto_emergencia_nombre VARCHAR(100) NOT NULL,
-    contacto_emergencia_telefono VARCHAR(13) NOT NULL CHECK (contacto_emergencia_telefono REGEXP '^\+593[0-9]{9}$'),
+    contacto_emergencia_telefono VARCHAR(13) NOT NULL CHECK (contacto_emergencia_telefono REGEXP '^\[0-9]{10}$'),
     CONSTRAINT fk_datos_personales_pacientes FOREIGN KEY (datos_personales_id) REFERENCES datospersonales(id)
 );
 
