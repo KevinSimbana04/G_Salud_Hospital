@@ -1,0 +1,152 @@
+INSERT INTO direcciones (cuidad, parroquia, calle_principal, calle_secundaria, numero_casa, referencia)
+VALUES 
+    ('Quito', 'Centro Histórico', 'Calle García Moreno', 'Calle 24 de Mayo', '123', 'Cerca de la Plaza Grande'),
+    ('Quito', 'La Mariscal', 'Avenida Amazonas', 'Calle Luis Cordero', '456', 'Frente al Parque El Ejido'),
+    ('Quito', 'San Blas', 'Calle Guayaquil', 'Calle Panamá', '789', 'Cerca del Mercado Central'),
+    ('Quito', 'La Carolina', 'Avenida Eloy Alfaro', 'Calle De Los Shyris', '101', 'Cerca del Parque La Carolina'),
+    ('Quito', 'La Tola', 'Calle Ríos', 'Calle Sucre', '202', 'Cerca del Colegio San Gabriel'),
+    ('Quito', 'La Mariscal', 'Calle Foch', 'Calle Washington', '303', 'Cerca del Hotel Quito'),
+    ('Quito', 'El Bosque', 'Calle Los Andes', 'Calle El Sol', '404', 'Frente al Centro Comercial El Bosque'),
+    ('Quito', 'Chillos', 'Avenida de Los Chillos', 'Calle San Luis', '505', 'Cerca del parque Los Chillos'),
+    ('Quito', 'Pomasqui', 'Calle Libertad', 'Calle La Loma', '606', 'Cerca del Parque Central de Pomasqui'),
+    ('Quito', 'Cumbayá', 'Avenida Interoceánica', 'Calle Principal', '707', 'Cerca del Centro Comercial San Luis');
+
+
+INSERT INTO pais_origen (pais, nacionalidad)
+VALUES 
+    ('Ecuador', 'Ecuatoriana'),
+    ('Colombia', 'Colombiana'),
+    ('Perú', 'Peruana'),
+    ('Venezuela', 'Venezolana'),
+    ('Bolivia', 'Boliviana');
+    
+INSERT INTO datospersonales (tipo_idnetificacion, numero_indetificacion, nombres_completos, fecha_nacimiento, edad, sexo, estado_civil, telefono, direccion_id, pais_origen_id, correo_electronico, tipo_persona)
+VALUES 
+    ('cedula', '1712345678', 'Juan Pérez', '1985-03-14', 39, 'M', 'Soltero', '0987654321', 1, 1, 'juan.perez@example.com', 'Paciente'),
+    ('pasaporte', 'P123456789', 'Ana Martínez', '1990-07-22', 34, 'F', 'Casada', '0998765432', 2, 1, 'ana.martinez@example.com', 'Medico'),
+    ('cedula', '1712341234', 'Carlos Rodríguez', '1980-01-10', 45, 'M', 'Divorciado', '0981234567', 3, 1, 'carlos.rodriguez@example.com', 'Paciente'),
+    ('pasaporte', 'P987654321', 'María López', '1983-09-25', 41, 'F', 'Viuda', '0996543210', 4, 2, 'maria.lopez@example.com', 'Medico'),
+    ('cedula', '1719876543', 'Luis García', '1995-04-15', 29, 'M', 'Soltero', '0982345678', 5, 1, 'luis.garcia@example.com', 'Paciente'),
+    ('cedula', '1713456789', 'Marta Fernández', '1992-02-10', 32, 'F', 'Soltera', '0987654321', 6, 3, 'marta.fernandez@example.com', 'Paciente'),
+    ('pasaporte', 'P453278901', 'Pedro González', '1987-08-05', 37, 'M', 'Casado', '0998765432', 7, 4, 'pedro.gonzalez@example.com', 'Medico'),
+    ('cedula', '1718765432', 'Sofía Torres', '1991-11-20', 33, 'F', 'Casada', '0981234567', 8, 5, 'sofia.torres@example.com', 'Paciente'),
+    ('pasaporte', 'P123987456', 'Jorge Díaz', '1986-03-12', 38, 'M', 'Divorciado', '0992345678', 9, 2, 'jorge.diaz@example.com', 'Medico'),
+    ('cedula', '1712348765', 'Carla Martínez', '1994-01-25', 30, 'F', 'Soltera', '0989876543', 10, 1, 'carla.martinez@example.com', 'Paciente');
+
+
+INSERT INTO especialidades (nombre, descripcion)
+VALUES 
+    ('Cardiología', 'Especialidad médica dedicada al diagnóstico y tratamiento de enfermedades del corazón'),
+    ('Pediatría', 'Especialidad médica que se encarga del cuidado de la salud infantil'),
+    ('Neurología', 'Especialidad médica relacionada con el sistema nervioso'),
+    ('Dermatología', 'Especialidad médica que trata las enfermedades de la piel'),
+    ('Traumatología', 'Especialidad médica enfocada en las lesiones del aparato locomotor');
+    
+INSERT INTO medicos (datos_personales_id, especialidad_id, licencia_profesional, experiencia_years, tipo_contrato, fecha_ingreso, horario_entrada, hora_salida)
+VALUES 
+    (2, 1, 'C12345', 10, 'Permanente', '2015-01-10', '08:00:00', '16:00:00'),
+    (4, 2, 'C23456', 7, 'Permanente', '2016-03-12', '09:00:00', '17:00:00'),
+    (3, 3, 'C34567', 15, 'Temporal', '2010-11-21', '10:00:00', '18:00:00'),
+    (5, 4, 'C45678', 5, 'Por Servicio', '2018-06-25', '11:00:00', '19:00:00'),
+    (6, 1, 'C56789', 12, 'Permanente', '2014-08-15', '08:00:00', '16:00:00'),
+    (7, 2, 'C67890', 9, 'Temporal', '2017-02-20', '09:00:00', '17:00:00'),
+    (8, 3, 'C78901', 13, 'Por Servicio', '2016-11-10', '10:00:00', '18:00:00'),
+    (9, 4, 'C89012', 6, 'Permanente', '2019-04-01', '11:00:00', '19:00:00'),
+    (10, 5, 'C90123', 8, 'Permanente', '2015-09-25', '08:30:00', '16:30:00'),
+    (1, 1, 'C01234', 20, 'Permanente', '2001-05-30', '07:30:00', '15:30:00');
+    
+INSERT INTO pacientes (datos_personales_id, grupo_sanguineo, alergias, enfermedades_preexistentes, medicamentos_actuales, contacto_emergencia_nombre, contacto_emergencia_telefono)
+VALUES 
+    (1, 'O+', 'Ninguna', 'Hipertensión', 'Losartán', 'Carlos Pérez', '0998887777'),
+    (3, 'B-', 'Polen', 'Asma', 'Salbutamol', 'Marta Rodríguez', '0987776543'),
+    (5, 'O-', 'Ninguna', 'Diabetes', 'Metformina', 'Juan García', '0998765432'),
+    (2, 'A+', 'Penicilina', 'Ninguna', 'Amoxicilina', 'Laura Martínez', '0987654321'),
+    (4, 'AB+', 'Lactosa', 'Artritis', 'Ibuprofeno', 'Pedro López', '0998765432'),
+    (6, 'O+', 'Ninguna', 'Ninguna', 'Aspirina', 'Pedro González', '0993212345'),
+    (7, 'A-', 'Lactosa', 'Hipertensión', 'Losartán', 'Juan Rodríguez', '0986543210'),
+    (8, 'B+', 'Polen', 'Asma', 'Salbutamol', 'Marta Fernández', '0997654321'),
+    (9, 'O-', 'Ninguna', 'Artritis', 'Ibuprofeno', 'Luis Pérez', '0982345678'),
+    (10, 'AB+', 'Ninguna', 'Diabetes', 'Metformina', 'Carlos Martínez', '0982345678');
+    
+INSERT INTO areas (nombre, ubicacion, num_consultorio)
+VALUES 
+    ('Consulta General', 'Planta Baja', 101),
+    ('Cardiología', 'Primer Piso', 201),
+    ('Pediatría', 'Segundo Piso', 301),
+    ('Traumatología', 'Tercer Piso', 401),
+    ('Dermatología', 'Planta Baja', 102);
+
+INSERT INTO citas (paciente_id, medico_id, fecha, hora_inicio, hora_finalizacion, estado, motivo, area_id)
+VALUES 
+    (1, 1, '2025-02-10', '09:00:00', '09:30:00', 'Pendiente', 'Chequeo general', 1),
+    (3, 4, '2025-02-12', '10:00:00', '10:30:00', 'Completada', 'Revisión de medicación', 2),
+    (5, 6, '2025-02-13', '11:00:00', '11:30:00', 'Cancelada', 'Control de diabetes', 3),
+    (7, 7, '2025-02-14', '12:00:00', '12:30:00', 'Pendiente', 'Tratamiento para artritis', 4),
+    (9, 8, '2025-02-15', '13:00:00', '13:30:00', 'Completada', 'Consulta dermatológica', 5),
+    (2, 2, '2025-02-16', '14:00:00', '14:30:00', 'Pendiente', 'Revisión de alergias', 1),
+    (4, 5, '2025-02-17', '15:00:00', '15:30:00', 'Completada', 'Consulta traumatológica', 2),
+    (6, 3, '2025-02-18', '16:00:00', '16:30:00', 'Cancelada', 'Consulta de neurología', 3),
+    (8, 4, '2025-02-19', '17:00:00', '17:30:00', 'Pendiente', 'Chequeo general', 4),
+    (10, 5, '2025-02-20', '18:00:00', '18:30:00', 'Completada', 'Tratamiento dermatológico', 5);
+
+
+INSERT INTO examenesmedicos (nombre, descripcion, tipo_examen, costo)
+VALUES 
+    ('Análisis de sangre', 'Examen para medir varios parámetros sanguíneos', 'Laboratorio', 25.00),
+    ('Radiografía de tórax', 'Examen de rayos X para evaluar los pulmones', 'Imagenología', 40.00),
+    ('Ultrasonido abdominal', 'Examen de ultrasonido para evaluar los órganos abdominales', 'Imagenología', 50.00),
+    ('Electrocardiograma', 'Examen para evaluar la actividad eléctrica del corazón', 'Laboratorio', 35.00),
+    ('Prueba de alergias', 'Test para detectar alergias comunes', 'Laboratorio', 30.00),
+    ('Análisis de sangre completo', 'Prueba general de sangre para evaluar diversos parámetros', 'Laboratorio', 22.00),
+    ('Prueba de función pulmonar', 'Examen para evaluar el rendimiento de los pulmones', 'Laboratorio', 60.00),
+    ('Rayos X de huesos', 'Examen para detectar fracturas y problemas óseos', 'Imagenología', 45.00),
+    ('Análisis de orina', 'Prueba para analizar la composición de la orina', 'Laboratorio', 18.00),
+    ('ECG', 'Examen para medir la actividad del corazón', 'Laboratorio', 40.00);
+    
+INSERT INTO facturas (cita_id, fecha_emision, subtotal, impuestos, total, estado_pago, metodo_pago, total_examenes, total_medicamentos, observaciones)
+VALUES 
+    (1, '2025-02-01', 50.00, 5.00, 55.00, 'Pagada', 'Efectivo', 25.00, 30.00, 'Consulta y análisis de sangre'),
+    (2, '2025-02-02', 75.00, 7.50, 82.50, 'Pendiente', 'Tarjeta de Crédito', 40.00, 35.00, 'Radiografía y consulta'),
+    (3, '2025-02-03', 120.00, 12.00, 132.00, 'Pagada', 'Transferencia Bancaria', 50.00, 60.00, 'Ultrasonido y consulta'),
+    (4, '2025-02-04', 60.00, 6.00, 66.00, 'Pendiente', 'Seguro Médico', 40.00, 20.00, 'Electrocardiograma y consulta'),
+    (5, '2025-02-05', 80.00, 8.00, 88.00, 'Pagada', 'Efectivo', 30.00, 50.00, 'Prueba de alergias y consulta'),
+    (6, '2025-02-06', 40.00, 4.00, 44.00, 'Pendiente', 'Tarjeta de Crédito', 22.00, 18.00, 'Análisis de sangre y consulta'),
+    (7, '2025-02-07', 100.00, 10.00, 110.00, 'Pagada', 'Transferencia Bancaria', 60.00, 40.00, 'Prueba pulmonar y consulta'),
+    (8, '2025-02-08', 150.00, 15.00, 165.00, 'Pendiente', 'Seguro Médico', 45.00, 120.00, 'Rayos X y consulta'),
+    (9, '2025-02-09', 90.00, 9.00, 99.00, 'Pagada', 'Efectivo', 18.00, 72.00, 'Análisis de orina y consulta'),
+    (10, '2025-02-10', 110.00, 11.00, 121.00, 'Pendiente', 'Tarjeta de Crédito', 40.00, 70.00, 'ECG y consulta');
+
+INSERT INTO historialmedico (cita_id, paciente_id, descripcion, diagnostico, tratamiento_recomendado, medicamentos_recetados, procedimientos_realizados, estado_general, resultados_examenes, recomendaciones_futuras, fecha_registro, observaciones)
+VALUES 
+    (1, 1, 'Consulta por hipertensión', 'Hipertensión leve', 'Control de la presión arterial', 'Losartán 50mg', 'Electrocardiograma', 'Bueno', 'Presión arterial dentro de los límites', 'Realizar controles mensuales', '2025-02-01', 'Paciente en buen estado'),
+    (2, 3, 'Consulta por tos persistente', 'Bronquitis', 'Medicamentos para el control de la tos', 'Salbutamol', 'Radiografía de tórax', 'Bueno', 'Radiografía muestra pulmones limpios', 'Revisar en 2 semanas', '2025-02-02', 'Paciente con tos controlada'),
+    (3, 5, 'Consulta por malestar estomacal', 'Ulceras gástricas', 'Medicamentos antiácidos', 'Metformina 500mg', 'Ultrasonido', 'Regular', 'Ulceras detectadas', 'Control en 1 mes', '2025-02-03', 'Paciente en observación'),
+    (4, 2, 'Consulta por dolor en el pecho', 'Angina de pecho', 'Medicamentos antianginosos', 'Amoxicilina 250mg', 'Electrocardiograma', 'Bueno', 'Corazón funcionando correctamente', 'Realizar examen en 1 mes', '2025-02-04', 'Paciente controlado'),
+    (5, 4, 'Consulta por dolor en pierna', 'Fractura de tibia', 'Reposo y fisioterapia', 'Ibuprofeno 200mg', 'Rayos X', 'Crítico', 'Fractura grave', 'Requiere cirugía en 2 días', '2025-02-05', 'Paciente con fractura seria'),
+    (6, 6, 'Consulta por alergias', 'Alergia al polen', 'Antihistamínicos', 'Aspirina 100mg', 'Prueba de alergias', 'Bueno', 'Alergia detectada', 'Evitar contacto con alérgenos', '2025-02-06', 'Paciente con tratamiento adecuado'),
+    (7, 7, 'Consulta por dolor en las articulaciones', 'Artritis', 'Medicamentos antiinflamatorios', 'Amoxicilina 500mg', 'Rayos X', 'Regular', 'Articulaciones inflamadas', 'Ejercicios diarios recomendados', '2025-02-07', 'Paciente con evolución favorable'),
+    (8, 8, 'Consulta por dolor de cabeza', 'Migraña', 'Analgésicos', 'Ibuprofeno 200mg', 'Electrocardiograma', 'Bueno', 'No se detectaron anomalías', 'Control de migraña con medicación', '2025-02-08', 'Paciente en tratamiento adecuado'),
+    (9, 9, 'Consulta por colesterol alto', 'Hipercolesterolemia', 'Medicamentos para bajar colesterol', 'Metformina 850mg', 'Análisis de sangre', 'Bueno', 'Colesterol dentro de los niveles recomendados', 'Seguir dieta baja en grasas', '2025-02-09', 'Paciente estable'),
+    (10, 10, 'Consulta por dolores de cabeza frecuentes', 'Cefalea crónica', 'Tratamiento farmacológico', 'Losartán 50mg', 'Rayos X', 'Regular', 'Cefalea recurrente', 'Consultar cada 6 meses', '2025-02-10', 'Paciente con seguimiento a largo plazo');
+
+INSERT INTO proveedores (nombre, contacto, telefono, direccion) VALUES
+('Farmacéutica XYZ', 'Luis Pérez', '0998765432', 'Av. Amazonas y Shyris, Quito, Ecuador'),
+('Laboratorios ABC', 'Ana Martínez', '0987654321', 'Calle 10 de Agosto y Pérez Guerrero, Quito, Ecuador'),
+('Salud y Bienestar S.A.', 'Carlos Gómez', '0976543210', 'Av. 6 de Diciembre y Mena del Hierro, Quito, Ecuador'),
+('Distribuidora Médica', 'Juan López', '0965432109', 'Calle García Moreno, Quito, Ecuador'),
+('Proveedora de Medicamentos El Dorado', 'María Rodríguez', '0954321098', 'Calle Sucre y Rocafuerte, Quito, Ecuador');
+
+
+INSERT INTO medicamentos (nombre, descripcion, tipo_medicamento, presentacion, dosis, stock, fecha_vencimiento, proveedor_id) VALUES
+('Paracetamol', 'Medicamento para aliviar dolores y reducir fiebre', 'Analgésico', 'Tabletas', '500mg', 100, '2026-06-01', 1),
+('Amoxicilina', 'Antibiótico utilizado para tratar infecciones bacterianas', 'Antibiótico', 'Cápsulas', '250mg', 200, '2026-12-01', 2),
+('Ibuprofeno', 'Anti-inflamatorio no esteroide', 'Antiinflamatorio', 'Tabletas', '400mg', 150, '2025-11-01', 3),
+('Aspirina', 'Medicamento utilizado para aliviar el dolor y fiebre', 'Antipirético', 'Tabletas', '500mg', 120, '2025-07-01', 4),
+('Omeprazol', 'Medicamento para tratar problemas gástricos', 'Otros', 'Tabletas', '20mg', 80, '2026-02-01', 5);
+
+INSERT INTO prescripcionesmedicas (cita_id, medicamento_id, factura_id, cantidad, costo_unitario, instrucciones, estado) VALUES
+(1, 1, 1, 2, 1.50, 'Tomar cada 8 horas después de las comidas.', 'Pendiente'),
+(2, 2, 2, 1, 5.00, 'Tomar una cápsula cada 12 horas.', 'Pendiente'),
+(3, 3, 3, 3, 1.20, 'Tomar dos tabletas cada 6 horas.', 'Pendiente'),
+(4, 4, 4, 1, 0.90, 'Tomar una tableta cada 8 horas.', 'Entregado'),
+(5, 5, 5, 1, 2.50, 'Tomar una tableta antes de dormir.', 'Pendiente');
